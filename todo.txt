@@ -1,0 +1,7 @@
+Event Emitter 
+
+What is event? event emit? event listen?
+    - Its an activity. Front end : click, double-click, hover -> perform something against these
+    - example : emit and listen
+              : my button -> click (event) -> js function triggers(emit) 
+              : (js function is listening when to trigger )
