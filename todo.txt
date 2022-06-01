@@ -5,3 +5,6 @@ What is event? event emit? event listen?
     - example : emit and listen
               : my button -> click (event) -> js function triggers(emit) 
               : (js function is listening when to trigger )
+              
+
+why do we need it? 
