@@ -15,3 +15,7 @@ why do we need it?
 File system with event
     - perform async function with event
     - error handling in events 
+
+*an application about clint server communication 
+- take commands from client side 
+- executes from server side 
