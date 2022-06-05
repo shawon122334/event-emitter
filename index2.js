@@ -27,9 +27,21 @@ withLog.on('end',()=>console.log('execution completed'));
 
 // registering an event to work with data
 withLog.on('data',(data)=>console.log(`Length : ${data.length}`));
-// error event for error handling
-withLog.on('error',(err)=> console.log(err) );
 
+// error event for error handling
+withLog.on('error',(err)=> {
+    console.log(err)
+    process.exit(1) // stops the program if there is an error, means we dont want to continue rest of the program. it stops right here
+});
+/*
+----------------------------------------------
+if there is an error, stops the program, works for whole node. universal
+  
+    process.on('uncaughtException',(err)=>{
+        console.log(err)
+    })
+----------------------------------------------   
+*/
 
 withLog.execute(fs.readFile,'') // error event 
 withLog.execute(fs.readFile,'./sample.txt'); // execute function expects an async function and some arguments, as we want to read file we pass the file location
