@@ -8,3 +8,6 @@ What is event? event emit? event listen?
               
 
 why do we need it? 
+    -we have to define *all the events* in call back , but we can define many listeners individually using event emitter
+    - in call back , we have to write all codes and execute everything(unless we write more cb) in there, 
+    but, we can split code(more listeners) using event and execute code partially (we can define which code to execute and which not to execute)
