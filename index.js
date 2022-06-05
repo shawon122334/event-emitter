@@ -46,6 +46,9 @@ class WithLog extends EventEmitter{
 
     }
 }
+// WithLog class extends EventEmitter class, that means WithLog class has all the properties of EventEmitter class
+// this keyword indicates an object of the class
+
 // lets create an object for WithLog class 
 const withLog = new WithLog();
 
@@ -53,4 +56,20 @@ const withLog = new WithLog();
 withLog.on('end',()=> console.log('End execution') )
 withLog.on('begin',()=> console.log('Begin execution') )
 withLog.execute(()=> console.log('--executing task--') );
+console.log('-------------------------------------------------------')
 //-------------------------------------------------------------------------
+
+// Problem : We would like to execute an event not more than once 
+withLog.once('data',()=>console.log('This is data event'))
+// executes only one time, even if we emit more than one time
+
+withLog.emit('data')
+withLog.emit('data')
+withLog.emit('data')
+withLog.emit('data')
+withLog.emit('data')
+withLog.emit('data')
+
+console.log('--------------------------------------------');
+
+//------------------------------------------------------------------------
