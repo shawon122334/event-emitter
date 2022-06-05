@@ -56,6 +56,16 @@ const withLog = new WithLog();
 withLog.on('end',()=> console.log('End execution') )
 withLog.on('begin',()=> console.log('Begin execution') )
 withLog.execute(()=> console.log('--executing task--') );
+
+/*withLog.execute(()=>{
+    setImmediate(()=>{
+        console.log('--executing task--');
+    })
+})
+    // asynchronous function is sent to event loop thats why output aint same.
+    // to avoid this what we can do is: emit these events inside asynchronous functions callback
+*/
+
 console.log('-------------------------------------------------------')
 //-------------------------------------------------------------------------
 
