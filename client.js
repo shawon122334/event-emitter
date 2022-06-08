@@ -17,12 +17,14 @@ const server = require('./server')(client) // sending client instance to server
 server.on('response',(res)=>{
     process.stdout.write(res) 
     process.stdout.write('\n')
-})
+    
+}) // response event is created here but triggered in server side
 
 // taking input(line event)
 // add,delete,list,help(commands)
 rl.on('line',(command)=>{
     // console.log(command); // we are getting the inputs. now we have to send this to server
     client.emit('command',command)
+    // client event is in server side but triggered here 
       
 })
